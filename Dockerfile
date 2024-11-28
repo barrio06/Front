@@ -10,7 +10,6 @@ RUN ng build --configuration production
 # Etapa 2: Configuración de Nginx
 FROM nginx:stable
 COPY --from=build /app/dist/Front/browser /usr/share/nginx/html
-COPY --from=build /app/dist/Front/browser/index.csr.html /usr/share/nginx/html/index.html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
